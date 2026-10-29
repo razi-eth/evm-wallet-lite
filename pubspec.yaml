@@ -1,0 +1,31 @@
+name: evm_wallet_lite
+description: "A lightweight, self-custodial EVM wallet for Android, with an in-app dApp browser."
+publish_to: "none"
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.22.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Inti EVM: RPC, signing, ABI ERC-20.
+  web3dart: ^2.7.1
+  http: ^1.2.0
+  # Mnemonic BIP-39 + derivasi BIP-44 (m/44'/60'/0'/0/0) agar seed
+  # kompatibel dengan wallet lain (MetaMask, Trust, dsb).
+  bip39: ^1.0.6
+  bip32: ^2.0.0
+  hex: ^0.2.0
+  crypto: ^3.0.0
+  # Penyimpanan kunci di Keystore (Android) / Keychain (iOS).
+  flutter_secure_storage: ^9.2.4
+  # Satu-satunya dependensi UI berat: WebView untuk dApp browser.
+  flutter_inappwebview: ^6.1.5
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
